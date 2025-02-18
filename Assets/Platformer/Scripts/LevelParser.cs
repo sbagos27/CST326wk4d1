@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -38,7 +39,8 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
-    public GameObject testPrefab;
+    bool isScrolling = false;
+    
 
     // --------------------------------------------------------------------------
     void Start()
@@ -51,6 +53,31 @@ public class LevelParser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             ReloadLevel();
+        if (!isScrolling) // Only start if not already running
+        {
+            StartCoroutine(questionScroll());
+            isScrolling = true;
+        }
+
+
+    }
+
+    IEnumerator questionScroll()
+    {
+        Renderer rend = questionBoxPrefab.GetComponent<Renderer>();
+        
+        if (rend != null)
+        {
+            while (true) // Loop indefinitely
+            {
+                yield return new WaitForSeconds(0.12f);
+            
+                Vector2 offset = rend.sharedMaterial.GetTextureOffset("_MainTex"); // Get current offset
+                offset.y += 0.2f; // Increase Y Offset by 0.2
+                rend.sharedMaterial.SetTextureOffset("_MainTex", offset); // Apply the new offset
+            }
+        }
+        
     }
 
     // --------------------------------------------------------------------------
@@ -82,11 +109,29 @@ public class LevelParser : MonoBehaviour
             {
                 // Todo - Instantiate a new GameObject that matches the type specified by letter
                 // Todo - Position the new GameObject at the appropriate location by using row and column
-                // Todo - Parent the new GameObject under levelRoot
+                // Todo - Parent the new GameObject under levelRoot    
                 if (letters[col] == 'x')
                 {
                     Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
-                    GameObject newObj =  Instantiate(testPrefab, environmentRoot );
+                    GameObject newObj =  Instantiate(rockPrefab, environmentRoot );
+                    newObj.transform.position = pos;    
+                }
+                if (letters[col] == 'b')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newObj =  Instantiate(brickPrefab, environmentRoot );
+                    newObj.transform.position = pos;    
+                }
+                if (letters[col] == '?')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newObj =  Instantiate(questionBoxPrefab, environmentRoot );
+                    newObj.transform.position = pos;    
+                }
+                if (letters[col] == 's')
+                {
+                    Vector3 pos = new Vector3(col + 0.5f, row + 0.5f, 0f);
+                    GameObject newObj =  Instantiate(stonePrefab, environmentRoot );
                     newObj.transform.position = pos;    
                 }
             }
