@@ -53,6 +53,7 @@ public class LevelParser : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
             ReloadLevel();
+        
         if (!isScrolling) // Only start if not already running
         {
             StartCoroutine(questionScroll());
@@ -68,12 +69,12 @@ public class LevelParser : MonoBehaviour
         
         if (rend != null)
         {
-            while (true) // Loop indefinitely
+            while (true) 
             {
                 yield return new WaitForSeconds(0.12f);
             
                 Vector2 offset = rend.sharedMaterial.GetTextureOffset("_MainTex"); // Get current offset
-                offset.y += 0.2f; // Increase Y Offset by 0.2
+                offset.y += 0.2f;
                 rend.sharedMaterial.SetTextureOffset("_MainTex", offset); // Apply the new offset
             }
         }
