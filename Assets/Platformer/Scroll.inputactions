@@ -1,0 +1,56 @@
+{
+    "name": "Scroll",
+    "maps": [
+        {
+            "name": "Scroll",
+            "id": "c9f7db94-d089-4cfe-84f6-d1a2093e02c2",
+            "actions": [
+                {
+                    "name": "Scroll",
+                    "type": "PassThrough",
+                    "id": "b6011384-c261-4124-8e9a-1103f2b1d4b0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "3D Vector",
+                    "id": "25108cdf-a65f-4008-b51b-badb714483ce",
+                    "path": "3DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "4c588d1d-d028-4c88-8c2e-46c4aeabb1c2",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "b42cd5f2-95ac-42a2-a5f1-94107e378958",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
