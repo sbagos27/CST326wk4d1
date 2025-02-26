@@ -22,6 +22,7 @@ public class CharacterController : MonoBehaviour
     void UpdateAnimation()
     {
         animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetBool("In Air", !isGrounded);
     }
 
     void Update()
