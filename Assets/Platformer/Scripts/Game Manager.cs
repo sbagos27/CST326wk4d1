@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float speed = 10f;
     public AudioClip brickSound;
     public AudioClip coinSound;
-
+    
     void Update()
     {
         camDirection = move.action.ReadValue<Vector3>();
