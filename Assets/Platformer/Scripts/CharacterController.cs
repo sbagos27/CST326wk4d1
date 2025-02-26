@@ -8,7 +8,7 @@ public class CharacterController : MonoBehaviour
     public float jumpBoostForce = 8f;
 
     [Header("Debug")] 
-    public bool isGrounded;
+        public bool isGrounded;
     
     Animator animator;
     Rigidbody rb;
@@ -32,15 +32,16 @@ public class CharacterController : MonoBehaviour
         rb.linearVelocity += Vector3.right * (horizontalAmount * Time.deltaTime * acceleration);
         
         float horizontalSpeed = rb.linearVelocity.x;
+        float verticalSpeed = rb.linearVelocity.y;
+
         horizontalSpeed = Mathf.Clamp(horizontalSpeed, -maxSpeed, maxSpeed);
+        verticalSpeed = Mathf.Clamp(verticalSpeed, -maxSpeed*2, maxSpeed*2);
 
         Vector3 newVelocity = rb.linearVelocity;
         newVelocity.x = horizontalSpeed;
+        newVelocity.y = verticalSpeed;
         rb.linearVelocity = newVelocity;
-        
-        //should clamp vertical
-        //test on ground
-
+            
         Collider collider = GetComponent<Collider>();
         Vector3 startPoint = transform.position;
         float castDistance = collider.bounds.extents.y + 0.01f;
