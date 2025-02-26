@@ -520,8 +520,8 @@ MonoBehaviour:
   brickPrefab: {fileID: 2652198492393551387, guid: d94221691cf23ce429136e2be05d002b, type: 3}
   questionBoxPrefab: {fileID: 2652198492393551387, guid: 97d0fe6850ab3714eaa654f26f4ca9f8, type: 3}
   stonePrefab: {fileID: 2652198492393551387, guid: e2bf2963d586ea44ea04e84c9ae1fa8e, type: 3}
-  waterPrefab: {fileID: 0}
-  goalPrefab: {fileID: 0}
+  waterPrefab: {fileID: 7094354566434749053, guid: 0ab73d93aee123b46a33b4f2cbcd2808, type: 3}
+  goalPrefab: {fileID: 7094354566434749053, guid: 372c5e75e7fb3f6409d10da9e117534a, type: 3}
 --- !u!1001 &558961608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,6 +574,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mario (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c1905cb394ab6404ba3872adb56e90fe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c1905cb394ab6404ba3872adb56e90fe, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 391ab8c140d39c647b81caef4eed66a3, type: 2}
+    - target: {fileID: 5866666021909216657, guid: c1905cb394ab6404ba3872adb56e90fe, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c1905cb394ab6404ba3872adb56e90fe, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: c1905cb394ab6404ba3872adb56e90fe, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -607,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 50
   maxSpeed: 10
-  jumpImpulse: 1.3
+  jumpImpulse: 3.5
   jumpBoostForce: 5.7
   isGrounded: 0
 --- !u!136 &558961611

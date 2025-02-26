@@ -10,16 +10,23 @@ public class CharacterController : MonoBehaviour
     [Header("Debug")] 
     public bool isGrounded;
     
-    
+    Animator animator;
     Rigidbody rb;
     
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+    }
+
+    void UpdateAnimation()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
     }
 
     void Update()
     {
+        UpdateAnimation();
         float horizontalAmount = Input.GetAxis("Horizontal");
         rb.linearVelocity += Vector3.right * (horizontalAmount * Time.deltaTime * acceleration);
         
