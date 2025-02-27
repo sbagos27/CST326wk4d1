@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         Vector3 newPos = cam.transform.position + camDirection * speed * Time.deltaTime;
         cam.transform.position = newPos;
 
-        int timeLeft = 100 - (int)(Time.time);
+        int timeLeft = 10 - (int)(Time.time);
         timeText.text = $"Time: {timeLeft}";
 
         if (timeLeft <= 0)
