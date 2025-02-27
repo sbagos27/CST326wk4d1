@@ -21,7 +21,10 @@ public class GameManager : MonoBehaviour
     private int coins = 0;
     private int score = 0;
 
+    public GameObject mario;
     public GameObject marioHead;
+    public LevelFinish levelFinish;
+    
     public static GameManager instance; 
 
     private void Awake()
@@ -82,5 +85,16 @@ public class GameManager : MonoBehaviour
             audioSrc.clip = clip;
             audioSrc.Play();
         }
+    }
+
+    public void OnPassLevel(LevelFinish goal)
+    {
+        Debug.Log("YOU WINNN");
+    }
+
+    public void KillMario(WaterKiller waterKiller)
+    {
+        Debug.Log("YOU DIED!");
+        Destroy(mario);
     }
 }

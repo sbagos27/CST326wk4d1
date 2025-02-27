@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Scroll
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 963194227}
 --- !u!1 &1084135363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1369,7 @@ GameObject:
   - component: {fileID: 1084135364}
   - component: {fileID: 1084135366}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1396,6 +1396,7 @@ MonoBehaviour:
   brickSound: {fileID: 8300000, guid: 9a2aa47c3daeb2743ae5cf675f28a422, type: 3}
   coinSound: {fileID: 8300000, guid: 80a0608fce429b144a44039dcf7c77a0, type: 3}
   marioHead: {fileID: 1184263522}
+  levelFinish: {fileID: 2420068832966447681, guid: 372c5e75e7fb3f6409d10da9e117534a, type: 3}
 --- !u!4 &1084135365
 Transform:
   m_ObjectHideFlags: 0
